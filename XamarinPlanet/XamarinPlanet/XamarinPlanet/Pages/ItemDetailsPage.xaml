@@ -13,19 +13,12 @@
         <StackLayout
             Margin="16">
             <Label
-                FontSize="12"
-                FontAttributes="Bold"
-                Text="{Binding Model.PubDate, Converter={x:StaticResource DateTimeToStringConverter}}"
-                HorizontalTextAlignment="End" />
+                Style="{StaticResource SmallBlackLabel}"
+                Text="{Binding Model.PubDate, Converter={x:StaticResource DateTimeToStringConverter}}"/>
             <Label
-                Text="{Binding Model.Title}"
-                FontSize="25"
-                TextColor="#0057B7"
-                FontAttributes="Bold"
-                HorizontalTextAlignment="Center" />
+                Style="{StaticResource HeaderLightBlueLabel}"
+                Text="{Binding Model.Title}"/>
             <FlexLayout
-                Grid.Row="2"
-                Grid.ColumnSpan="2"
                 Direction="Row"
                 BindableLayout.ItemsSource="{Binding Model.Person}"
                 VerticalOptions="Center"
@@ -33,16 +26,12 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Frame
-                            CornerRadius="0"
+                            Style="{StaticResource LightBlueFrame}"
                             Padding="5"
-                            HasShadow="False"
-                            BackgroundColor="#0057B7"
                             Margin="5">
                             <Label
                                 Text="{Binding Text}"
-                                FontAttributes="Italic"
-                                VerticalOptions="Center"
-                                TextColor="White" />
+                                Style="{StaticResource WhiteItalicLabel}"/>
                         </Frame>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>

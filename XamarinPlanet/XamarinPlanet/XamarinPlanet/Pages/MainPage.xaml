@@ -9,7 +9,7 @@
                 x:DataType="xs:MainPageModel">
     <StackLayout Spacing="20">
         <Frame BackgroundColor="{StaticResource BlueColor}" 
-               Padding="24" 
+               x:Name="HeaderFrame"
                CornerRadius="0">
             <Label Text="Hi, and welcome to Planet Xamarin!" 
                    HorizontalTextAlignment="Center" 

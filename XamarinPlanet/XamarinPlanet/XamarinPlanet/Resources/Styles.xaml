@@ -58,6 +58,12 @@
         <Setter Property="FontSize" Value="18"/>
     </Style>
     
+    <Style TargetType="Label" 
+           BasedOn="{StaticResource MediumLightBlueLabel}"
+           x:Key="HeaderLightBlueLabel">
+        <Setter Property="FontSize" Value="25"/>
+    </Style>
+    
     <Style TargetType="BoxView"
            x:Key="LoadingBackgroundBoxView">
         <Setter Property="Opacity" Value="0.5"/>
