@@ -2,7 +2,7 @@
 <views:MvxContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="XamarinPlanet.Pages.ItemDetailsPage"
+    x:Class="XamarinPlanet.ItemDetailsPage"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:xs="clr-namespace:XamarinPlanet;assembly=XamarinPlanet"
     xmlns:models="clr-namespace:XamarinPlanet.Models;assembly=XamarinPlanet"

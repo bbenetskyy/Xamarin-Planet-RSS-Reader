@@ -1,6 +1,6 @@
 ﻿using MvvmCross.Forms.Views;
 
-namespace XamarinPlanet.Pages
+namespace XamarinPlanet
 {
     public partial class ItemDetailsPage : MvxContentPage<ItemDetailsPageModel>
     {

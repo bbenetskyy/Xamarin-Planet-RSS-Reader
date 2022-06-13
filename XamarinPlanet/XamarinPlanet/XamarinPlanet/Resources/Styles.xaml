@@ -28,12 +28,63 @@
         <Setter Property="FontSize" Value="32"/>
     </Style>
     
+    <Style TargetType="Label" 
+           x:Key="WhiteItalicLabel">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontAttributes" Value="Italic"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+    </Style>
+    
+    <Style TargetType="Label" 
+           x:Key="SmallBlackLabel">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="HorizontalTextAlignment" Value="End"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="VerticalTextAlignment" Value="Start"/>
+    </Style>
+    
+    <Style TargetType="Label" 
+           x:Key="MediumLightBlueLabel">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextColor" Value="{StaticResource LightBlueColor}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+    
+    <Style TargetType="Label" 
+           x:Key="LargeLightBlueLabel"
+           BasedOn="{StaticResource MediumLightBlueLabel}">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+    
     <Style TargetType="BoxView"
            x:Key="LoadingBackgroundBoxView">
         <Setter Property="Opacity" Value="0.5"/>
         <Setter Property="VerticalOptions" Value="FillAndExpand"/>
         <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
         <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+    </Style>
+    
+    <Style TargetType="Frame">
+        <Setter Property="HasShadow" Value="False"/>
+    </Style>
+    
+    <Style TargetType="Frame"
+           x:Key="TransparentBlueFrame">
+        <Setter Property="BorderColor" Value="{StaticResource BlueColor}"/>
+    </Style>
+    
+    <Style TargetType="Frame"
+           x:Key="BlueFrame">
+        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+        <Setter Property="CornerRadius" Value="5"/>
+    </Style>
+    
+    <Style TargetType="Frame"
+           x:Key="LightBlueFrame">
+        <Setter Property="BackgroundColor" Value="{StaticResource LightBlueColor}"/>
+        <Setter Property="CornerRadius" Value="5"/>
     </Style>
     
     <Style TargetType="ScrollView">
@@ -49,5 +100,13 @@
         <Setter Property="WidthRequest" Value="50"/>
         <Setter Property="HorizontalOptions" Value="Center"/>
         <Setter Property="VerticalOptions" Value="Center"/>
+    </Style>
+    
+    <Style TargetType="Entry"
+           x:Key="SearchEntry">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="PlaceholderColor" Value="{StaticResource BlueColor}"/>
+        <Setter Property="TextColor" Value="{StaticResource BlueColor}"/>
     </Style>
 </ResourceDictionary>

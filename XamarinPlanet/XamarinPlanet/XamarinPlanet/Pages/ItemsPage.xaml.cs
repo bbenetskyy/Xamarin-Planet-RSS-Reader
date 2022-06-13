@@ -1,4 +1,4 @@
-﻿namespace XamarinPlanet.Pages
+﻿namespace XamarinPlanet
 {
     public partial class ItemsPage : MvvmCross.Forms.Views.MvxContentPage<ItemsPageModel>
     {

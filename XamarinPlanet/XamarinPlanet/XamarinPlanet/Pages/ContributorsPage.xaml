@@ -15,6 +15,7 @@
             <StackLayout>
                 <Entry Text="{Binding SearchText}"
                        Margin="10"
+                       Style="{StaticResource SearchEntry}"
                        IsVisible="{Binding IsBusy, Converter={StaticResource InvertedVisibilityConverter}}"
                        BackgroundColor="Transparent"
                        Placeholder="Enter name or url or email to filter contributors"
@@ -33,9 +34,8 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="models:Contributor">
                            <ContentView Margin="10,0">
-                               <Frame BackgroundColor="{StaticResource BlueColor}"
-                                      Margin="10,0"
-                                      HasShadow="False">
+                               <Frame Style="{StaticResource BlueFrame}"
+                                      Margin="10,0">
                                    <StackLayout Spacing="10">
                                        <xs:TextValueControl Text="Name"
                                                             Value="{Binding Name}"/>
