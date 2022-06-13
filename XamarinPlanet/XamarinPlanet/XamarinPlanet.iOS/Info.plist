@@ -34,5 +34,11 @@
     <string>XamarinPlanet</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Please give access to display your location details in App Info Page</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Please give access to display your location details in App Info Page</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Please give access to display your location details in App Info Page</string>
 </dict>
 </plist>

@@ -17,6 +17,7 @@ namespace XamarinPlanet
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IRssClient, RssClient>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IResourceManager, ResourceManager>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IMvxCommandHelper, MvxStrongCommandHelper>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IGeocodingService, GeocodingService>();
         }
     }
 }

@@ -67,6 +67,8 @@
     <Compile Include="Effects\TransparentiOSEffect.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\iOSApplicationInfo.cs" />
+    <Compile Include="Services\iOSLocationService.cs" />
     <Compile Include="Setup.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />

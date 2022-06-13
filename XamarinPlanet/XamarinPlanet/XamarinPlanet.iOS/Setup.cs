@@ -1,5 +1,6 @@
 using MvvmCross.Forms.Platforms.Ios.Core;
 using MvvmCross.IoC;
+using XamarinPlanet.iOS.Services;
 
 namespace XamarinPlanet.iOS
 {
@@ -10,6 +11,8 @@ namespace XamarinPlanet.iOS
             var ioc = base.InitializeIoC();
 
             // setup ios dependencies
+            ioc.LazyConstructAndRegisterSingleton<IApplicationInfo, iOSApplicationInfo>();
+            ioc.LazyConstructAndRegisterSingleton<ILocationService, iOSLocationService>();
 
             return ioc;
         }

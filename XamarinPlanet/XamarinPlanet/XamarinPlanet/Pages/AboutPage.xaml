@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                      xmlns:xs="clr-namespace:XamarinPlanet;assembly=XamarinPlanet"
+                      x:TypeArguments="xs:AboutPageModel"
+                      x:Class="XamarinPlanet.AboutPage"
+                      Title="About"
+                      x:DataType="xs:AboutPageModel">
+   <ContentView ControlTemplate="{StaticResource BusyTemplate}">
+       <StackLayout BackgroundColor="{StaticResource BlueColor}" Padding="10" Spacing="10">
+           <xs:TextValueControl Text="App Name"
+                                Value="{Binding AppName}"/>
+           <xs:TextValueControl Text="App Version"
+                                Value="{Binding AppVersion}"/>
+           <xs:TextValueControl Text="Geolocation"
+                                Value="{Binding Geolocation}"/>
+       </StackLayout>
+   </ContentView>
+</views:MvxContentPage>

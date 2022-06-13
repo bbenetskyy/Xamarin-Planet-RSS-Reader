@@ -1,5 +1,6 @@
 using MvvmCross.Forms.Platforms.Android.Core;
 using MvvmCross.IoC;
+using XamarinPlanet.Droid.Services;
 
 namespace XamarinPlanet.Droid
 {
@@ -10,6 +11,8 @@ namespace XamarinPlanet.Droid
             var ioc = base.InitializeIoC();
 
             //register platform dependencies
+            ioc.LazyConstructAndRegisterSingleton<IApplicationInfo, AndroidApplicationInfo>();
+            ioc.LazyConstructAndRegisterSingleton<ILocationService, AndroidLocationService>();
             
             return ioc;
         }
