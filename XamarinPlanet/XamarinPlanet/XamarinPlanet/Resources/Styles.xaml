@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ResourceDictionary 
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
     <Style TargetType="Button" x:Key="PrimaryButton">
         <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
         <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
-        <Setter Property="HorizontalOptions" Value="Center"/>
-        <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="Padding" Value="20, 10"/>
         <Setter Property="CornerRadius" Value="10"/>
     </Style>
     
     <Style TargetType="Label" x:Key="WhiteLabel">
-        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource DarkBlueColor}"/>
         <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
         <Setter Property="VerticalOptions" Value="FillAndExpand"/>
         <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
@@ -46,20 +45,20 @@
     </Style>
     
     <Style TargetType="Label" 
-           x:Key="MediumLightBlueLabel">
+           x:Key="MediumBlueLabel">
         <Setter Property="FontSize" Value="12"/>
-        <Setter Property="TextColor" Value="{StaticResource LightBlueColor}"/>
+        <Setter Property="TextColor" Value="{StaticResource BlueColor}"/>
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
     
     <Style TargetType="Label" 
            x:Key="LargeLightBlueLabel"
-           BasedOn="{StaticResource MediumLightBlueLabel}">
+           BasedOn="{StaticResource MediumBlueLabel}">
         <Setter Property="FontSize" Value="18"/>
     </Style>
     
     <Style TargetType="Label" 
-           BasedOn="{StaticResource MediumLightBlueLabel}"
+           BasedOn="{StaticResource MediumBlueLabel}"
            x:Key="HeaderLightBlueLabel">
         <Setter Property="FontSize" Value="25"/>
     </Style>
@@ -69,27 +68,25 @@
         <Setter Property="Opacity" Value="0.5"/>
         <Setter Property="VerticalOptions" Value="FillAndExpand"/>
         <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource DarkBlueColor}"/>
     </Style>
     
-    <Style TargetType="Frame">
-        <Setter Property="HasShadow" Value="False"/>
+    <Style TargetType="pancakeView:PancakeView"
+           x:Key="TransparentDarkBlueFrame">
+        <Setter Property="Padding" Value="10, 20"/>
+        <Setter Property="CornerRadius" Value="0,20,0,0"/>
+        <Setter Property="Border" Value="{pancakeView:BorderMarkup Color={StaticResource DarkBlueColor}, Thickness='2'}"/>
     </Style>
     
-    <Style TargetType="Frame"
-           x:Key="TransparentBlueFrame">
-        <Setter Property="BorderColor" Value="{StaticResource BlueColor}"/>
-    </Style>
-    
-    <Style TargetType="Frame"
-           x:Key="BlueFrame">
-        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+    <Style TargetType="pancakeView:PancakeView"
+           x:Key="DarkBlueFrame">
+        <Setter Property="BackgroundColor" Value="{StaticResource DarkBlueColor}"/>
         <Setter Property="CornerRadius" Value="5"/>
     </Style>
     
-    <Style TargetType="Frame"
-           x:Key="LightBlueFrame">
-        <Setter Property="BackgroundColor" Value="{StaticResource LightBlueColor}"/>
+    <Style TargetType="pancakeView:PancakeView"
+           x:Key="BlueFrame">
+        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
         <Setter Property="CornerRadius" Value="5"/>
     </Style>
     
@@ -112,7 +109,7 @@
            x:Key="SearchEntry">
         <Setter Property="Margin" Value="10"/>
         <Setter Property="BackgroundColor" Value="Transparent"/>
-        <Setter Property="PlaceholderColor" Value="{StaticResource BlueColor}"/>
-        <Setter Property="TextColor" Value="{StaticResource BlueColor}"/>
+        <Setter Property="PlaceholderColor" Value="{StaticResource DarkBlueColor}"/>
+        <Setter Property="TextColor" Value="{StaticResource DarkBlueColor}"/>
     </Style>
 </ResourceDictionary>
