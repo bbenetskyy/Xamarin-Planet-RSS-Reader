@@ -1,0 +1,9 @@
+
+XamarinPlanet/.idea/
+XamarinPlanet/.vs/
+**/obj/
+**/bin/
+
+*.user
+
+XamarinPlanet/XamarinPlanet/XamarinPlanet.Android/Resources/Resource.designer.cs
