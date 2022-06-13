@@ -11,8 +11,11 @@
         ControlTemplate="{StaticResource BusyTemplate}">
         <StackLayout
             x:Name="MainContext">
-            <CollectionView
-                ItemsSource="{Binding Items}">
+            <Picker
+                HorizontalOptions="End"
+                ItemsSource="{Binding SortBySource}"                SelectedItem="{Binding SortBy}"                Title="Order by"
+                TitleColor="{StaticResource BlueColor}"/>
+            <CollectionView                ItemsSource="{Binding Items}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <ContentView Margin="10">
