@@ -9,13 +9,78 @@
                       Title="About"
                       x:DataType="xs:AboutPageModel">
    <ContentView ControlTemplate="{StaticResource BusyTemplate}">
-       <StackLayout BackgroundColor="{StaticResource BlueColor}" Padding="10" Spacing="10">
-           <xs:TextValueControl Text="App Name"
-                                Value="{Binding AppName}"/>
-           <xs:TextValueControl Text="App Version"
-                                Value="{Binding AppVersion}"/>
-           <xs:TextValueControl Text="Geolocation"
-                                Value="{Binding Geolocation}"/>
-       </StackLayout>
+       <Grid BackgroundColor="{StaticResource WhiteColor}" 
+             Padding="10" 
+             ColumnDefinitions="*,5*,*"
+             RowDefinitions="auto,auto,*"
+             RowSpacing="10">
+           <Frame
+               Grid.Column="1"
+               BorderColor="{StaticResource BlueColor}"
+               Margin="10,0"
+               HasShadow="False">
+               <Grid
+                   RowSpacing="5"
+                   RowDefinitions="*, auto">
+                   <Label
+                       Text="App Name"
+                       FontSize="18"
+                       TextColor="{StaticResource LightBlueColor}"
+                       FontAttributes="Bold" />
+                   <Label
+                       Grid.Row="1"
+                       FontSize="12"
+                       HorizontalTextAlignment="End"
+                       FontAttributes="Bold"
+                       Text="{Binding AppName}" />
+                   </Grid>
+           </Frame>
+           <Frame
+               Grid.Column="1"
+               Grid.Row="1"
+               BorderColor="{StaticResource BlueColor}"
+               Margin="10,0"
+               HasShadow="False">
+               <Grid
+                   RowSpacing="5"
+                   RowDefinitions="*, auto">
+                   <Label
+                       Text="App Version"
+                       FontSize="18"
+                       TextColor="{StaticResource LightBlueColor}"
+                       FontAttributes="Bold" />
+                   <Label
+                       Grid.Row="1"
+                       FontSize="12"
+                       HorizontalTextAlignment="End"
+                       FontAttributes="Bold"
+                       Text="{Binding AppVersion}" />
+               </Grid>
+           </Frame>
+           <Frame
+               Grid.Column="1"
+               Grid.Row="2"
+               BorderColor="{StaticResource BlueColor}"
+               Margin="10,0"
+               VerticalOptions="Start"
+               HasShadow="False">
+               <Grid
+                   RowSpacing="5"
+                   RowDefinitions="*, auto">
+                   <Label
+                       Text="Geolocation"
+                       FontSize="18"
+                       TextColor="{StaticResource LightBlueColor}"
+                       FontAttributes="Bold" />
+                   <Label
+                       Grid.Row="1"
+                       FontSize="12"
+                       HorizontalTextAlignment="End"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Start"
+                       Text="{Binding Geolocation}" />
+               </Grid>
+           </Frame>
+       </Grid>
    </ContentView>
 </views:MvxContentPage>

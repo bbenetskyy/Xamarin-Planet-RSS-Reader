@@ -1,8 +1,9 @@
-﻿using XamarinPlanet.PageModels;
+﻿using MvvmCross.Forms.Views;
+using XamarinPlanet.PageModels;
 
 namespace XamarinPlanet.Pages
 {
-    public partial class ItemDetailsPage : MvvmCross.Forms.Views.MvxContentPage<ItemDetailsPageModel>
+    public partial class ItemDetailsPage : MvxContentPage<ItemDetailsPageModel>
     {
         public ItemDetailsPage()
         {

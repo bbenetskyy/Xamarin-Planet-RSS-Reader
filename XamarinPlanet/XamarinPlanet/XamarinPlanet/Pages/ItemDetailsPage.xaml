@@ -6,7 +6,8 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:xs="clr-namespace:XamarinPlanet;assembly=XamarinPlanet"
     xmlns:models="clr-namespace:XamarinPlanet.Models;assembly=XamarinPlanet"
-    x:TypeArguments="xs:ItemDetailsPageModel">
+    xmlns:pageModels="clr-namespace:XamarinPlanet.PageModels;assembly=XamarinPlanet"
+    x:TypeArguments="pageModels:ItemDetailsPageModel">
     <ContentView
         ControlTemplate="{StaticResource BusyTemplate}">
         <StackLayout
