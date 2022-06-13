@@ -8,9 +8,9 @@
     xmlns:models="clr-namespace:XamarinPlanet.Models;assembly=XamarinPlanet"
     x:TypeArguments="xs:ItemsPageModel">
     <ContentView
-        ControlTemplate="{StaticResource BusyTemplate}"
-        BackgroundColor="#FAFAFB">
+        ControlTemplate="{StaticResource BusyTemplate}">
         <StackLayout
+            x:Name="MainContext"
             Margin="16">
             <CollectionView
                 ItemsSource="{Binding Items}">
@@ -64,10 +64,12 @@
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
                                 </FlexLayout>
-                                <!--<Label
-                                        Text="{Binding Description}"
-                                        TextType="Html" />-->
                             </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={x:Reference MainContext}, Path=BindingContext.ChooseItemCommand}"
+                                    CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -1,9 +1,11 @@
 using System;
 using System.Threading.Tasks;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Xamarin.Forms;
 using XamarinPlanet.Models;
+using XamarinPlanet.PageModels;
 
 namespace XamarinPlanet
 {
@@ -18,9 +20,12 @@ namespace XamarinPlanet
         {
             _rssClient = rssClient;
             Items = new MvxObservableCollection<Item>();
+            ChooseItemCommand = new MvxAsyncCommand<Item>(ExecuteChooseItemCommand);
         }
 
         public MvxObservableCollection<Item> Items { get; }
+
+        public IMvxAsyncCommand<Item> ChooseItemCommand { get; }
 
         public override async Task Initialize()
         {
@@ -42,5 +47,11 @@ namespace XamarinPlanet
                 IsBusy = false;
             }
         }
+
+        private Task ExecuteChooseItemCommand(Item item)
+        {
+            return MvxNavigationService.Navigate<ItemDetailsPageModel, Item>(item);
+        }
+
     }
 }
