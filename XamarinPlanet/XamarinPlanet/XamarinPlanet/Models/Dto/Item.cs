@@ -6,6 +6,8 @@ namespace XamarinPlanet.Models
 {
     public class Item
     {
+        private string description;
+
         public Guid Guid { get; set; }
         public string Link { get; set; }
         public object Category { get; set; }
@@ -17,7 +19,13 @@ namespace XamarinPlanet.Models
         public Encoded Encoded { get; set; }
         [JsonProperty("post-id")]
         public PostId PostId { get; set; }
-        public string Description { get; set; }
+        public string Description
+        {
+            get => $@"<html>
+<body>{description}</body>
+</html>";
+            set => description = value;
+        }
         public CommentRss CommentRss { get; set; }
         [JsonProperty("yt:videoId")]
         public VideoId VideoId { get; set; }

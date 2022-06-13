@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<views:MvxContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamarinPlanet.Pages.ItemsPage"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:xs="clr-namespace:XamarinPlanet;assembly=XamarinPlanet"
+    xmlns:models="clr-namespace:XamarinPlanet.Models;assembly=XamarinPlanet"
+    x:TypeArguments="xs:ItemsPageModel">
+    <ContentView
+        ControlTemplate="{StaticResource BusyTemplate}"
+        BackgroundColor="#FAFAFB">
+        <StackLayout
+            Margin="16">
+            <CollectionView
+                ItemsSource="{Binding Items}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        Orientation="Vertical"
+                        ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            BorderColor="{StaticResource BlueColor}"
+                            Margin="10,0"
+                            HasShadow="False">
+                            <Grid
+                                RowSpacing="5"
+                                ColumnDefinitions="*,auto"
+                                RowDefinitions="auto, auto, auto">
+                                <Label
+                                    Text="{Binding Title}"
+                                    Grid.ColumnSpan="2"
+                                    FontSize="18"
+                                    TextColor="#0057B7"
+                                    FontAttributes="Bold" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    Text="{Binding PubDate, Converter={x:StaticResource DateTimeToStringConverter}}" />
+                                <FlexLayout
+                                    Grid.Row="2"
+                                    Grid.ColumnSpan="2"
+                                    Direction="Row"
+                                    BindableLayout.ItemsSource="{Binding Person}"
+                                    VerticalOptions="Center">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame
+                                                CornerRadius="0"
+                                                Padding="5"
+                                                HasShadow="False"
+                                                BackgroundColor="#0057B7"
+                                                Margin="5">
+                                                <Label
+                                                    Text="{Binding Text}"
+                                                    FontAttributes="Italic"
+                                                    VerticalOptions="Center"
+                                                    TextColor="White" />
+                                            </Frame>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </FlexLayout>
+                                <!--<Label
+                                        Text="{Binding Description}"
+                                        TextType="Html" />-->
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Grid>
+                        <Label
+                            Text="No Data Available"
+                            Style="{StaticResource HeaderWhiteLabel}" />
+                    </Grid>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </StackLayout>
+    </ContentView>
+</views:MvxContentPage>

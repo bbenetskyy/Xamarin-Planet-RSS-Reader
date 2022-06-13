@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using Newtonsoft.Json;
 using XamarinPlanet.Models;
+using XamarinPlanet.Services;
 using static Newtonsoft.Json.Formatting;
 using Formatting = System.Xml.Formatting;
 
@@ -21,7 +22,9 @@ namespace XamarinPlanet
         
         public async Task<List<TResult>> DownloadItems<TResult>(string itemName, bool hideParseException = true)
         {
-            using var client = new HttpClient();
+            HttpMessageHandler handler = new HttpClientHandler();
+            handler = new LoggerHttpMessageHandler(handler);
+            using var client = new HttpClient(handler);
             var sting = await client.GetStringAsync("https://www.planetxamarin.com/feed");
             
             var doc = new XmlDocument();
