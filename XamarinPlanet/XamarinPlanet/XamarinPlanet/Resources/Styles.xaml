@@ -11,4 +11,43 @@
         <Setter Property="Padding" Value="20, 10"/>
         <Setter Property="CornerRadius" Value="10"/>
     </Style>
+    
+    <Style TargetType="Label" x:Key="WhiteLabel">
+        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+        <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+    
+    <Style TargetType="Label" 
+           BasedOn="{StaticResource WhiteLabel}"
+           x:Key="HeaderWhiteLabel">
+        <Setter Property="FontSize" Value="32"/>
+    </Style>
+    
+    <Style TargetType="BoxView"
+           x:Key="LoadingBackgroundBoxView">
+        <Setter Property="Opacity" Value="0.5"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+    </Style>
+    
+    <Style TargetType="ScrollView">
+        <Setter Property="VerticalScrollBarVisibility" Value="Never"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Never"/>
+        <Setter Property="Orientation" Value="Vertical"/>
+    </Style>
+    
+    <Style TargetType="ActivityIndicator">
+        <Setter Property="IsRunning" Value="True"/>
+        <Setter Property="Color" Value="{StaticResource WhiteColor}"/>
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="WidthRequest" Value="50"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+    </Style>
 </ResourceDictionary>
