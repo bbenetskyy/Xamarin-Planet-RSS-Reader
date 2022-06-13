@@ -1,7 +1,7 @@
 ﻿using MvvmCross.Navigation;
 using XamarinPlanet.Models;
 
-namespace XamarinPlanet.PageModels
+namespace XamarinPlanet
 {
     public class ItemDetailsPageModel : BasePageModel<Item>
     {

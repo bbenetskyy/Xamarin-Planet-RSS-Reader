@@ -1,5 +1,4 @@
 ﻿using MvvmCross.Forms.Views;
-using XamarinPlanet.PageModels;
 
 namespace XamarinPlanet.Pages
 {

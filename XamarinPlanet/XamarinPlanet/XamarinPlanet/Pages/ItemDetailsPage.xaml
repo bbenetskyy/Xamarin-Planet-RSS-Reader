@@ -6,13 +6,51 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:xs="clr-namespace:XamarinPlanet;assembly=XamarinPlanet"
     xmlns:models="clr-namespace:XamarinPlanet.Models;assembly=XamarinPlanet"
-    xmlns:pageModels="clr-namespace:XamarinPlanet.PageModels;assembly=XamarinPlanet"
-    x:TypeArguments="pageModels:ItemDetailsPageModel">
+    x:TypeArguments="xs:ItemDetailsPageModel"
+    Title="Item Details">
     <ContentView
         ControlTemplate="{StaticResource BusyTemplate}">
         <StackLayout
             Margin="16">
-
+            <Label
+                FontSize="12"
+                FontAttributes="Bold"
+                Text="{Binding Model.PubDate, Converter={x:StaticResource DateTimeToStringConverter}}"
+                HorizontalTextAlignment="End" />
+            <Label
+                Text="{Binding Model.Title}"
+                FontSize="25"
+                TextColor="#0057B7"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center" />
+            <FlexLayout
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Direction="Row"
+                BindableLayout.ItemsSource="{Binding Model.Person}"
+                VerticalOptions="Center"
+                HorizontalOptions="End">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            CornerRadius="0"
+                            Padding="5"
+                            HasShadow="False"
+                            BackgroundColor="#0057B7"
+                            Margin="5">
+                            <Label
+                                Text="{Binding Text}"
+                                FontAttributes="Italic"
+                                VerticalOptions="Center"
+                                TextColor="White" />
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+            <Label
+                Text="{Binding Model.Description}"
+                TextType="Html"
+                FontSize="18" />
         </StackLayout>
     </ContentView>
 </views:MvxContentPage>

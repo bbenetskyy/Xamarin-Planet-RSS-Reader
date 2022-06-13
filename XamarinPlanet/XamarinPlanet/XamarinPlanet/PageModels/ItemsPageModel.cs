@@ -5,7 +5,6 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Xamarin.Forms;
 using XamarinPlanet.Models;
-using XamarinPlanet.PageModels;
 
 namespace XamarinPlanet
 {
