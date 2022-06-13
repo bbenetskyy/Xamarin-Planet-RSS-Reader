@@ -1,4 +1,5 @@
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.IoC;
 using MvvmCross.Logging.LogProviders;
 using MvvmCross.ViewModels;
@@ -15,6 +16,7 @@ namespace XamarinPlanet
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogger, GlobalLogger>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IRssClient, RssClient>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IResourceManager, ResourceManager>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IMvxCommandHelper, MvxStrongCommandHelper>();
         }
     }
 }

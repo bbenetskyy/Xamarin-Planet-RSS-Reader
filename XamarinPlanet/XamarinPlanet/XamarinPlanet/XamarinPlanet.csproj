@@ -12,14 +12,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DebounceMonitoring" Version="1.0.1" />
     <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Effects" />
   </ItemGroup>
 
   <ItemGroup>

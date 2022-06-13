@@ -7,10 +7,23 @@
                       xmlns:models="clr-namespace:XamarinPlanet.Models;assembly=XamarinPlanet"
                       x:TypeArguments="xs:ContributorsPageModel" 
                       x:Class="XamarinPlanet.ContributorsPage" 
+                      Title="Contributors"
+                      NavigationPage.HasNavigationBar="True"
                       x:DataType="xs:ContributorsPageModel">
     <ContentPage.Content>
         <ContentView ControlTemplate="{StaticResource BusyTemplate}">
             <StackLayout>
+                <Entry Text="{Binding SearchText}"
+                       Margin="10"
+                       IsVisible="{Binding IsBusy, Converter={StaticResource InvertedVisibilityConverter}}"
+                       BackgroundColor="Transparent"
+                       Placeholder="Enter name or url or email to filter contributors"
+                       PlaceholderColor="{StaticResource BlueColor}"
+                       TextColor="{StaticResource BlueColor}">
+                    <Entry.Effects>
+                        <xs:TransparentEntry/>
+                    </Entry.Effects>
+                </Entry>
                 <CollectionView ItemsSource="{Binding Contributors}">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout
