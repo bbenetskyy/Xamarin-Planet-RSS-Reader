@@ -14,6 +14,7 @@ namespace XamarinPlanet
             //initialise IoC Dependencies
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogger, GlobalLogger>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IRssClient, RssClient>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IResourceManager, ResourceManager>();
         }
     }
 }

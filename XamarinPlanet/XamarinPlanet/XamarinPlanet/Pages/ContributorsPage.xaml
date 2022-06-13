@@ -4,6 +4,7 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                       xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
                       xmlns:xs="clr-namespace:XamarinPlanet;assembly=XamarinPlanet"
+                      xmlns:models="clr-namespace:XamarinPlanet.Models;assembly=XamarinPlanet"
                       x:TypeArguments="xs:ContributorsPageModel" 
                       x:Class="XamarinPlanet.ContributorsPage" 
                       x:DataType="xs:ContributorsPageModel">
@@ -11,12 +12,28 @@
         <ContentView ControlTemplate="{StaticResource BusyTemplate}">
             <StackLayout>
                 <CollectionView ItemsSource="{Binding Contributors}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Vertical"
+                            ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Label Text="No Data Available"
-                                       Style="{StaticResource HeaderWhiteLabel}"/>
-                            </Grid>
+                        <DataTemplate x:DataType="models:Contributor">
+                           <ContentView Margin="10,0">
+                               <Frame BackgroundColor="{StaticResource BlueColor}"
+                                      Margin="10,0"
+                                      HasShadow="False">
+                                   <StackLayout Spacing="10">
+                                       <xs:TextValueControl Text="Name"
+                                                            Value="{Binding Name}"/>
+                                       <xs:TextValueControl Text="URL"
+                                                            Value="{Binding Uri}">
+                                       </xs:TextValueControl>
+                                       <xs:TextValueControl Text="Email"
+                                                            Value="{Binding Email}"/>
+                                   </StackLayout>
+                               </Frame>
+                           </ContentView>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                     <CollectionView.EmptyView>
