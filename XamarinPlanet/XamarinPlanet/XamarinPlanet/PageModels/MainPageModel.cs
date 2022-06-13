@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Xml;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Newtonsoft.Json;
 using XamarinPlanet.Models;
@@ -11,55 +14,19 @@ namespace XamarinPlanet
 {
     public class MainPageModel : BasePageModel
     {
-        private string _text;
-
-        public MainPageModel(ILogger logger) : base(logger)
+        public MainPageModel(ILogger logger, IMvxNavigationService mvxNavigationService) : base(logger, mvxNavigationService)
         {
+            OpenContributorsCommand = new MvxAsyncCommand(ExecuteOpenContributorsCommand);
+            OpenItemsCommand = new MvxAsyncCommand(ExecuteOpenItemsCommand);
+            OpenAboutCommand = new MvxAsyncCommand(ExecuteOpenAboutCommand);
         }
 
-        public override async void ViewAppeared()
-        {
-           
-                var client = new HttpClient();
-                var sting = await client.GetStringAsync("https://www.planetxamarin.com/feed");
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(sting);
+        public IMvxCommand OpenContributorsCommand { get; }
+        public IMvxCommand OpenItemsCommand { get; }
+        public IMvxCommand OpenAboutCommand { get; }
 
-                var items = new List<Item>();
-                var contributors = new List<Contributor>();
-
-                foreach (XmlElement childNode in doc["rss"]["channel"].ChildNodes)
-                {
-                    try
-                    {
-                        if (childNode.Name == "item")
-                        {
-                            var json = JsonConvert.SerializeXmlNode(childNode, Formatting.None, true);
-                            Logger.LogDebugMessage(json);
-                            items.Add(JsonConvert.DeserializeObject<Item>(json));
-                        }
-                        else if (childNode.Name == "a10:contributor")
-                        {
-                            var json = JsonConvert.SerializeXmlNode(childNode, Formatting.None, true);
-                            Logger.LogDebugMessage(json);
-                            contributors.Add(JsonConvert.DeserializeObject<Contributor>(json));
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.LogError(ex);
-                    }
-                }
-                
-                // var json = JsonConvert.SerializeXmlNode(doc.LastChild, Formatting.None, true);
-                // var myDeserializedClass = JsonConvert.DeserializeObject<Rss>(json);
-        
-        }
-
-        public string Text
-        {
-            get => _text;
-            set => SetProperty(ref _text, value);
-        }
+        private Task ExecuteOpenContributorsCommand() => MvxNavigationService.Navigate<ContributorsPageModel>();
+        private Task ExecuteOpenItemsCommand() => MvxNavigationService.Navigate<ItemsPageModel>();
+        private Task ExecuteOpenAboutCommand() => MvxNavigationService.Navigate<AboutPageModel>();
     }
 }

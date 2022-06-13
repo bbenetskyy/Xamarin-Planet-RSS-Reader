@@ -6,11 +6,24 @@
                 xmlns:xs="clr-namespace:XamarinPlanet;assembly=XamarinPlanet"
                 x:Class="XamarinPlanet.MainPage" 
                 x:DataType="xs:MainPageModel">
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+    <StackLayout Spacing="20">
+        <Frame BackgroundColor="{StaticResource BlueColor}" 
+               Padding="24" 
+               CornerRadius="0">
+            <Label Text="Hi, and welcome to Planet Xamarin!" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="{StaticResource WhiteColor}" 
+                   FontSize="36"/>
         </Frame>
-        <Label Text="{Binding Text}" TextType="Html" FontSize="16" Padding="30,0,30,0"/>
+        <Button Text="List of Contributors"
+                Style="{StaticResource PrimaryButton}"
+                Command="{Binding OpenContributorsCommand}"/>
+        <Button Text="List of Planet Items"
+                Style="{StaticResource PrimaryButton}"
+                Command="{Binding OpenItemsCommand}"/>
+        <Button Text="About Information"
+                Style="{StaticResource PrimaryButton}"
+                Command="{Binding OpenAboutCommand}"/>
     </StackLayout>
 </views:MvxContentPage>
 
